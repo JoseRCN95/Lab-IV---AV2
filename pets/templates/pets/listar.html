@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Pets{% endblock %}
+
+{% block content %}
+<h2 class="text-center">Pets para adoção</h2>
+<div class="row">
+    {% for pet in pets %}
+    <div class="col-md-4">
+        <div class="card shadow-sm mb-4">
+            <img src="{{ pet.imagem.url }}" class="card-img-top" alt="{{ pet.nome }}" style="height: 250px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title">{{ pet.nome }}</h5>
+                <p class="card-text">{{ pet.descricao|truncatechars:80 }}</p>
+                <a href="{% url 'detalhar_pet' pet.id %}" class="btn btn-primary">Saiba mais</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ pet.nome }}{% endblock %}
+
+{% block content %}
+<div class="card mx-auto shadow" style="max-width: 800px;">
+    <div class="row g-0">
+        <div class="col-md-6">
+            <img src="{{ pet.imagem.url }}" class="img-fluid rounded-start" alt="{{ pet.nome }}">
+        </div>
+        <div class="col-md-6">
+            <div class="card-body">
+                <h2 class="card-title">{{ pet.nome }}</h2>
+                <p class="card-text"><strong>Raça:</strong> {{ pet.especie }}</p>
+                <p class="card-text"><strong>Idade:</strong> {{ pet.idade }} anos</p>
+                <p class="card-text">{{ pet.descricao }}</p>
+                <a href="{% url 'listar_pets' %}" class="btn btn-secondary">Voltar</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
