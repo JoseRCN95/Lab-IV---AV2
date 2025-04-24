@@ -14,7 +14,10 @@
                 <p class="card-text"><strong>Raça:</strong> {{ pet.especie }}</p>
                 <p class="card-text"><strong>Idade:</strong> {{ pet.idade }} anos</p>
                 <p class="card-text">{{ pet.descricao }}</p>
-                <a href="{% url 'listar_pets' %}" class="btn btn-secondary">Voltar</a>
+                <div class="d-flex gap-2 mt-3">
+                    <a href="{% url 'adotar_pet' pet.id %}" class="btn btn-success">Adotar</a>
+                    <a href="{% url 'listar_pets' %}" class="btn btn-secondary">Voltar</a>
+                </div>
             </div>
         </div>
     </div>

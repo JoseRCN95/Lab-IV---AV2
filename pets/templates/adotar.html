@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Adotar {{ pet.nome }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2>Solicitar Adoção de {{ pet.nome }}</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label>Seu nome</label>
+      <input type="text" name="nome" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Idade</label>
+      <input type="number" name="idade" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Endereço</label>
+      <textarea name="endereco" class="form-control" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Enviar solicitação</button>
+  </form>
+</div>
+{% endblock %}

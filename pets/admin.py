@@ -1,4 +1,10 @@
 from django.contrib import admin
-from .models import Pet
+from .models import Pet, Categoria
 
-admin.site.register(Pet)
+@admin.register(Pet)
+class PetAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'especie', 'idade', 'categoria')
+
+@admin.register(Categoria)
+class CategoriaAdmin(admin.ModelAdmin):
+    list_display = ('nome',)

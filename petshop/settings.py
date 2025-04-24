@@ -128,3 +128,6 @@ import os
 MEDIA_URL = '/media/'  # URL base para acessar as imagens
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Pasta onde as imagens serão armazenadas
 
+LOGIN_REDIRECT_URL = '/'
+
+LOGIN_URL = '/login/'
